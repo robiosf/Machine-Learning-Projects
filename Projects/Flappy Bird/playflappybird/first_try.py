@@ -11,9 +11,10 @@ import cv2
 import wrapped_flappy_bird as game
 
 game_state = game.GameState()
-# 创建实例
 do = [0, 1]
 image, reward, terminal = game_state.frame_step(do)
-# 将一个动作输入到游戏中，获得游戏返回的结果
 print (image.shape, reward, terminal)
-# 打印 image 的大小， reward 和 terminal 的值
+
+image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
+cv2.imshow('image', image)
+cv2.waitKey(0)
